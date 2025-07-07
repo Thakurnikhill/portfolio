@@ -1,8 +1,8 @@
-# Mishal's Portfolio
+# Nikhil's Portfolio
 
 A modern and responsive personal portfolio website built to showcase my projects, skills, education, and work experience. Developed using React and Vite, the site features smooth animations, dark/light mode toggle, and a clean UI optimized for all devices.
 
-[Live Demo](https://msl-mishal.github.io)
+[Live Demo](https://msl-nikhil.github.io)
 
 ---
 
