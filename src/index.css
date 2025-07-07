@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Smooth transitions for theme switching */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    cursor: none;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    @apply text-secondary-light bg-primary-light dark:text-secondary-dark dark:bg-primary-dark;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-width {
+    @apply w-full max-w-6xl mx-auto;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .section-padding {
+    @apply py-16 px-6 lg:px-16;
+  }
+
+  .gradient-text {
+    /* Variables for defining `from` and `to` gradient text colors */
+    --gradient-start: #00B1F5;
+    --gradient-end: #3b82f6;
+
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .dark .gradient-text {
+    /* Overriding with Dark mode gradient colors */
+    --gradient-start: #3b82f6;
+    --gradient-end: #00B1F5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-shade-light dark:bg-primary-shade-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent-light/50 dark:bg-accent-dark/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-light dark:bg-accent-dark;
+}
